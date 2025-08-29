@@ -1,35 +1,31 @@
-% -------------------------------
-% Hechos: Mamíferos
-% -------------------------------
-mamifero(leon).
-mamifero(vaca).
-mamifero(cabra).
+% Personas presentes
+persona(alice).
+persona(robert).
+persona(clara).
+persona(james).
 
-% -------------------------------
-% Hechos: Qué come cada animal
-% -------------------------------
-come(leon, carne).
-come(vaca, pasto).
-come(cabra, pasto).
 
-% -------------------------------
-% Reglas
-% -------------------------------
+% Relaciones
+esposo(alice, lord_henry).
+sobrina(clara, lord_henry).
+socio(james, lord_henry).
+empleado(robert, lord_henry).
 
-% Regla 1: Todo mamífero (excepto el león) es comida para el león
-comida(X) :- mamifero(X), X \= leon.
+% Motivos (quién podría tener razones)
+motivo(alice, herencia).
+motivo(robert, maltrato).
+motivo(clara, deuda).
+motivo(james, negocios).
 
-% Regla 2: Un animal es herbívoro si come pasto
-herbivoro(X) :- come(X, pasto).
+% Medios (quién tuvo acceso al arma)
+acceso(alice, veneno).
+acceso(robert, cuchillo).
+acceso(clara, cuerda).
+acceso(james, pistola).
 
-% Regla 3: Un animal es carnívoro si come carne
-carnivoro(X) :- come(X, carne).
+% Oportunidad (quién estuvo en la biblioteca)
+estuvo(alice, sala).
+estuvo(robert, cocina).
+estuvo(clara, biblioteca).
+estuvo(james, estudio).
 
-% Regla 4: Todo animal que es comida del león es una presa
-presa(X) :- comida(X).
-
-% Regla 5: Un depredador es todo animal carnívoro
-depredador(X) :- carnivoro(X).
-
-% Regla 6: Un animal no come cierta comida si es mamífero y no está declarado que la coma
-no_come(X, Y) :- mamifero(X), \+ come(X, Y).
