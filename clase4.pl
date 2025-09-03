@@ -11,8 +11,7 @@ usuario(luis, visitante).
 % Uso de NEGACIÓN (\+/1)
 % Verifica si un usuario NO es administrador
 % ---------------------------------------
-no_es_admin(Nombre) :-
-    \+ usuario(Nombre, admin).
+ \+ usuario(quemado). easy 
 
 % ---------------------------------------
 % Uso de CORTE (!)
@@ -56,11 +55,11 @@ verificar_numero :-
 :-maximo(3, 10, M).
 
 %--Fallo (fail/0):
-%--:- mostrar_usuarios.
+:- mostrar_usuarios.
 
 %---Entrada/salida
 
-%--:- verificar_numero.
+:- verificar_numero.
 
 
 
