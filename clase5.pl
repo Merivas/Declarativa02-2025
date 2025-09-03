@@ -43,7 +43,7 @@ desigualdad(X, Y) :-
     X =\= Y.
 
 % Mayor que
-mayor(X, Y) :-
+mayor(X, Y,Resultado) :-
     X > Y.
 
 % Menor que
@@ -132,4 +132,32 @@ distancia(X1, Y1, X2, Y2, D) :-
 
 % Ejemplo de consulta:
 % ?- distancia(0, 0, 3, 4, D).
-% D = 5.
+% D = 5.    x   
+% Ejemplo de uso de módulo
+modulo(X, Y, Resultado) :-
+    Resultado is X mod Y.
+
+% Ejemplo de consulta:
+% ?- modulo(2, 2, R).
+% R = 0.
+
+
+
+% Hechos: padre/madre de alguien
+padre(juan, ana).
+padre(juan, pedro).
+padre(carlos, maria).
+padre(carlos, jose).
+
+madre(luisa, ana).
+madre(luisa, pedro).
+madre(marta, maria).
+madre(marta, jose).
+
+% Regla: dos personas son hermanos si comparten padre y madre
+hermanos(X, Y) :-
+    padre(P, X), padre(P, Y),
+    madre(M, X), madre(M, Y),
+    X \= Y.
+
+:- hermanos(ana, pedro).
