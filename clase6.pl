@@ -128,3 +128,41 @@ preorden(arbol(X, Izq, Der), L) :-
 
 % arbol_mitologia(A), preorden(A, L).
 
+:- preorden(
+       arbol(cronos,
+           arbol(rea,
+               arbol(zeus,
+                   arbol(hades,
+                       arbol(ares, nil, nil),
+                       nil
+                   ),
+                   arbol(poseidon,
+                       nil,
+                       arbol(hefesto, nil, nil)
+                   )
+               ),
+               nil
+           ),
+           nil
+       ),
+       L).
+
+:- postorden(
+       arbol(odin,
+           arbol(frigg,
+               arbol(thor,
+                   arbol(baldur,
+                       arbol(magni, nil, nil),
+                       nil
+                   ),
+                   arbol(hodr,
+                       nil,
+                       arbol(modi, nil, nil)
+                   )
+               ),
+               nil
+           ),
+           nil
+       ),
+       L).
+
