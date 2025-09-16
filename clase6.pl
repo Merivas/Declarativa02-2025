@@ -66,4 +66,65 @@ buscar(X, arbol(_,_,Der)) :- buscar(X,Der).
 % buscar(z, arbol(a,arbol(b,arbol(d,nil,nil),arbol(e,nil,nil)),arbol(c,nil,nil))).
 
 % buscar(X, arbol(a,arbol(b,arbol(d,nil,nil),arbol(e,nil,nil)),arbol(c,nil,nil))).
-            
+
+
+
+            % Definición del árbol (arbol(Raíz, Izq, Der))
+arbol_nordico(
+    arbol(odin,
+        arbol(frigg,
+            arbol(thor,
+                arbol(baldur,
+                    arbol(magni, nil, nil),
+                    nil
+                ),
+                arbol(hodr,
+                    nil,
+                    arbol(modi, nil, nil)
+                )
+            ),
+            nil
+        ),
+        nil
+    )
+).
+
+% Recorrido en postorden (Izq – Der – Raíz)
+postorden(nil, []).
+postorden(arbol(X, Izq, Der), L) :-
+    postorden(Izq, L1),
+    postorden(Der, L2),
+    append(L1, L2, L3),
+    append(L3, [X], L).
+
+% arbol_nordico(A), postorden(A, L).
+
+
+% Definición del árbol (arbol(Raíz, Izq, Der))
+arbol_mitologia(
+    arbol(cronos,
+        arbol(rea,
+            arbol(zeus,
+                arbol(hades,
+                    arbol(ares, nil, nil),
+                    nil
+                ),
+                arbol(poseidon,
+                    nil,
+                    arbol(hefesto, nil, nil)
+                )
+            ),
+            nil
+        ),
+        nil
+    )
+).
+% Recorrido en preorden (Raíz – Izq – Der)
+preorden(nil, []).
+preorden(arbol(X, Izq, Der), L) :-
+    preorden(Izq, L1),
+    preorden(Der, L2),
+    append([X|L1], L2, L).
+
+% arbol_mitologia(A), preorden(A, L).
+
