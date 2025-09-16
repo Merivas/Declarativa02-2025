@@ -18,13 +18,13 @@ resta(X, Y, Resultado) :-
 
 % Multiplicación
 multiplicacion(X, Y, Resultado) :-
-    Resultado is X * Y.
+     Resultado is X * Y.
 
 % División
 division(X, Y, Resultado) :-
     Resultado is X / Y.
 
-% Ejemplo de consulta:
+%Ejemplo de consulta:
 % ?- suma(5, 3, R).
 % R = 8.
 
