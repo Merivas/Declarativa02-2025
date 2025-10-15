@@ -20,7 +20,7 @@ listar_estudiantes.  % Finaliza el backtracking
 
 % Agregar nuevo estudiante
 agregar_estudiante(Nombre, Curso) :-
-    asserta(estudiante(Nombre, Curso)),
+    assert(estudiante(Nombre, Curso)),
     format('Se ha agregado el estudiante: ~w en el curso ~w.~n', [Nombre, Curso]).
 
 % agregar_estudiante('Carlos', declarativa).
