@@ -1,1 +1,4 @@
 Estudiante: Ana | Nota: 9
+Estudiante: Ana | Nota: 9
+Estudiante: Ana | Nota: 9
+Estudiante: Ana | Nota: 0
